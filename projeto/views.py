@@ -1,7 +1,7 @@
-from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
+from .forms import CadastroUsuarioForm
 
 # tela de login
 def index(request):
@@ -22,3 +22,15 @@ def index(request):
 @login_required
 def tela_inicial(request):
     return render(request, 'tela_inicial.html')
+
+# cadastarar usuario
+
+def cadastro_usuario(request):
+    if request.method == 'POST':
+        form = CadastroUsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')  # redireciona para login após cadastro
+    else:
+        form = CadastroUsuarioForm()
+    return render(request, 'cadastro.html', {'form': form})
