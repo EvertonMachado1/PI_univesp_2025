@@ -1,7 +1,7 @@
 # Projeto Integrador Grupo 010 - UNIVESP 2025 (Django com MySQL)
-```
+
 Este projeto utiliza **Django** (qualquer versão 5.x é compatível) e **MySQL** como banco de dados.
-```
+
 
 ## ✅ Requisitos
 ```
