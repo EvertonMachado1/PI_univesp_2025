@@ -47,7 +47,7 @@ Este projeto utiliza um banco de dados **MySQL**. Para configurá-lo corretament
 Acesse o MySQL e crie o banco de dados:
 
 ```sql
-CREATE DATABASE pi_univesp;
+CREATE DATABASE pi_univesp DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 ```
 
 ### 2. Criar o usuário no MySQL:
