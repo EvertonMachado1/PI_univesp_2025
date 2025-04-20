@@ -47,7 +47,7 @@ Este projeto utiliza um banco de dados **MySQL**. Para configurá-lo corretament
 Acesse o MySQL e crie o banco de dados:
 
 ```sql
-CREATE DATABASE pi_univesp DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE pi_univesp;
 ```
 
 ### 2. Criar o usuário no MySQL:
@@ -60,7 +60,15 @@ GRANT ALL PRIVILEGES ON pi_univesp.* TO 'pi'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-### 3. Importar o backup:
+### 3. Migrar o Banco de dados:
+Faça as migrações do banco de dados padrão do Django para o MySQL:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+### 4. Importar o backup:
 
 Navegue até o diretório fora da pasta do projeto, onde está o arquivo `bkp.sql`, e importe o banco:
 
