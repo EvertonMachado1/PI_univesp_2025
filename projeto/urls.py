@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import index, tela_inicial
+from .views import tela_principal, tabelaagd
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
-    path('tela_inicial/', tela_inicial, name='tela_inicial'),
+    path('tela_principal/', tela_principal, name='tela_principal'),
+    path('tabelaagd/', tabelaagd, name='tabelaagd'),
 ]
