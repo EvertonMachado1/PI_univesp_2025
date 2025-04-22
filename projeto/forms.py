@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from .models import UserProfile
+from .models import UserProfile, AulaAgendada, Sala, Instrumento
 
 # Formulário para cadastro de usuário
 class CadastroUsuarioForm(forms.ModelForm):
@@ -43,3 +43,40 @@ class CadastroUsuarioForm(forms.ModelForm):
         user_profile.save()
 
         return user
+    
+# agendamento de aula
+class AgendamentoAulaForm(forms.ModelForm):
+    ano = forms.IntegerField(initial=2025, widget=forms.HiddenInput())  # pode ser alterado conforme necessario
+    mes = forms.ChoiceField(choices=[(i, f'{i:02d}') for i in range(1, 13)], label="Mês")
+    dia = forms.IntegerField(min_value=1, max_value=31, label="Dia")
+    hora = forms.ChoiceField(choices=[(f"{h:02d}:00", f"{h:02d}:00") for h in range(8, 21)], label="Hora")
+    sala = forms.ModelChoiceField(queryset=Sala.objects.all(), label="Sala")
+    instrumento = forms.ModelChoiceField(queryset=Instrumento.objects.all(), required=False, label="Instrumento")
+    
+    class Meta:
+        model = AulaAgendada
+        fields = ['ano', 'mes', 'dia', 'hora', 'sala', 'instrumento']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # busca salas disponiveis no horario selecionado
+        self.fields['sala'].queryset = self.get_salas_disponiveis()
+        #retorna as salas disponiveis
+    def get_salas_disponiveis(self):
+        ano = self.cleaned_data.get('ano') if 'ano' in self.cleaned_data else None
+        mes = self.cleaned_data.get('mes') if 'mes' in self.cleaned_data else None
+        dia = self.cleaned_data.get('dia') if 'dia' in self.cleaned_data else None
+        hora = self.cleaned_data.get('hora') if 'hora' in self.cleaned_data else None
+        
+        # se faltar informações para o filtro retorna todas as salas
+        if not ano or not mes or not dia or not hora:
+            return Sala.objects.all()
+
+        # retorna salas que NÃO estão ocupadas no horario selecionado
+        return Sala.objects.exclude(id__in=AulaAgendada.objects.filter(
+            ano=ano,
+            mes=mes,
+            dia=dia,
+            hora=hora
+        ).values_list('sala', flat=True))
+  

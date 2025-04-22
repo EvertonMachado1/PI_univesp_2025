@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from projeto.forms import CadastroUsuarioForm
+from django.http import JsonResponse
+from .models import AulaAgendada, Sala, Instrumento
 
 
 # Tela de login
@@ -30,3 +32,26 @@ def cadastro_usuario(request):
 # tela principal
 def tela_principal(request):
     return render(request, 'tela_principal.html')
+
+# agendamento
+def agendar_aula(request):
+    if request.method == 'POST':
+        ano = request.POST.get('ano')
+        mes = request.POST.get('mes')
+        dia = request.POST.get('dia')
+        hora = request.POST.get('hora')
+        sala_id = request.POST.get('sala')
+        instrumento_id = request.POST.get('instrumento')
+        
+        # Recuperando a sala e o instrumento pelo ID
+        sala = Sala.objects.get(id=sala_id)
+        instrumento = Instrumento.objects.get(id=instrumento_id)
+        
+        # Criando o agendamento
+        aula_agendada = AulaAgendada.objects.create(
+            ano=ano, mes=mes, dia=dia, hora=hora, sala=sala, instrumento=instrumento
+        )
+        
+        return JsonResponse({'status': 'sucesso', 'message': 'Aula agendada com sucesso!'})
+    
+    return JsonResponse({'status': 'erro', 'message': 'Método não permitido'})
