@@ -13,12 +13,66 @@
     
     <div class="container">
         <div class="box">
-            <button class="btn">Agendamento</button>
+            <button class="btn" onclick="openModal()">Agendamento</button>
             <button class="btn">Deletar agendamento</button>
             <Button class="btn" id="matricular" onclick="pop_matri()">Matricular</Button>
             <button class="btn">Alunos</button>
             <button class="btn">Sair</button>
         </div>
+
+        <!-- Modal de Agendamento -->
+        <div id="agendamentoModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <h2>Agendar Aula</h2>
+              <form id="agendamentoForm">
+                <!-- campos ocultos para ano e mês -->
+                <input type="hidden" id="ano" name="ano">
+                <input type="hidden" id="mes" name="mes">
+          
+                <label for="dia">Dia:</label>
+                <input type="date" id="dia" name="dia" required><br><br>
+          
+                <label for="hora">Hora:</label>
+                <select id="hora" name="hora" required>
+                  <option value="08:00">08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                  <option value="18:00">18:00</option>
+                  <option value="19:00">19:00</option>                  
+                  <option value="20:00">20:00</option>
+                </select><br><br>
+          
+                <label for="sala">Sala:</label>
+                <select id="sala" name="sala" required>
+                  <option value="1">Sala 1</option>
+                  <option value="2">Sala 2 (Piano)</option>
+                  <option value="3">Sala 3 (Bateria)</option>
+                  <option value="4">Sala 4</option>
+                </select><br><br>
+          
+                <label for="instrumento">Instrumento:</label>
+                <select id="instrumento" name="instrumento">
+                  <option value="">— Nenhum —</option>
+                  <option value="violao">Violão</option>
+                  <option value="piano">Piano</option>
+                  <option value="bateria">Bateria</option>
+                  <option value="guitarra">Guitarra</option>
+                  <option value="canto">Canto</option>
+                </select><br><br>
+          
+                <button type="submit" class="btn">Confirmar Agendamento</button>
+              </form>
+            </div>
+          </div>
+          
         <h1>Sistema de Agendamento</h1>
         
         <div class="mesano">
@@ -226,7 +280,85 @@
         function close_matri(){
             document.getElementById("pop_over").style.display = "none";
         }
-    </script>
+
+        // agendamento
+        function pop_matri(){
+        document.getElementById("pop_over").style.display = "block";
+    }
+    function close_matri(){
+        document.getElementById("pop_over").style.display = "none";
+    }
+
+    // Agendamento
+    function openModal() {
+  document.getElementById("agendamentoModal").style.display = "block";
+}
+function closeModal() {
+  document.getElementById("agendamentoModal").style.display = "none";
+}
+
+// captura o submit
+document.getElementById('agendamentoForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // 1) pega a data completa (YYYY-MM-DD) e divide em partes
+  const dataFull = document.getElementById('dia').value; 
+  if (!dataFull) {
+    alert('Escolha um dia válido');
+    return;
+  }
+  const [ano, mes, dia] = dataFull.split('-');
+
+  // 2) preenche os campos hidden
+  document.getElementById('ano').value = ano;
+  document.getElementById('mes').value = parseInt(mes, 10);
+
+  // 3) monta o FormData manualmente (pra garantir ordem e valores corretos)
+  const formData = new FormData();
+  formData.append('ano', ano);
+  formData.append('mes', mes);
+  formData.append('dia', dia);
+  formData.append('hora', document.getElementById('hora').value);
+  formData.append('sala', document.getElementById('sala').value);
+  formData.append('instrumento', document.getElementById('instrumento').value);
+
+  // 4) envia via AJAX
+  fetch('/agendar-aula/', {
+    method: 'POST',
+    headers: {
+      'X-CSRFToken': getCookie('csrftoken'),
+    },
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === 'sucesso') {
+      alert(data.message);
+      closeModal();
+    } else {
+      alert('Erro: ' + data.message);
+    }
+  })
+  .catch(err => {
+    console.error('Erro na requisição:', err);
+    alert('Erro ao agendar a aula.');
+  });
+});
+
+// helper para pegar CSRF cookie
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+    document.cookie.split(';').forEach(cookie => {
+      cookie = cookie.trim();
+      if (cookie.startsWith(name + '=')) {
+        cookieValue = decodeURIComponent(cookie.slice(name.length + 1));
+      }
+    });
+  }
+  return cookieValue;
+}
+</script>
 
     
         
