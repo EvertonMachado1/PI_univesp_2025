@@ -77,7 +77,13 @@ mysql -u pi -p pi_univesp < bkp.sql
 ```
 
 Quando pedir a senha, digite: `1234`
+(Observações: Caso ocorra um erro de importação devido a tabelas já criadas, remova o banco anterior e importe a nova versão.
 
+```sql
+DROP DATABASE pi_univesp;
+CREATE DATABASE pi_univesp;
+EXIT;
+```
 ---
 
 ## 🚀 Rodando o Projeto
