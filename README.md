@@ -84,6 +84,9 @@ DROP DATABASE pi_univesp;
 CREATE DATABASE pi_univesp;
 EXIT;
 ```
+```bash
+mysql -u pi -p pi_univesp < bkp.sql
+```
 ---
 
 ## 🚀 Rodando o Projeto
