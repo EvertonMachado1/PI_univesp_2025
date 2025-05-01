@@ -48,334 +48,334 @@ def tela_principal(request):
     #09am - 10am
     ag_9h_seg = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=2, # Segunda-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_9h_ter = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=3, # Terça-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_9h_qua = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=4, # Quarta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()
 
     ag_9h_qui = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=5, # Quinta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()
 
     ag_9h_sex = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=6, # Sexta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()
 
     ag_9h_sab = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=7, # Sábado-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()
 
-        #010am - 11am
+    #010am - 11am
     ag_10h_seg = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=2, # Segunda-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_10h_ter = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=3, # Terça-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_10h_qua = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=4, # Quarta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()
 
     ag_10h_qui = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=5, # Quinta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()
 
     ag_10h_sex = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=6, # Sexta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()
 
     ag_10h_sab = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=7, # Sábado-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(9, 0),
+        hora__lt=time(10, 0)
     ).first()
 
-        #11am - 12pm
+    #11am - 12pm
     ag_11h_seg = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=2, # Segunda-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(10, 0),
+        hora__lt=time(11, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_11h_ter = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=3, # Terça-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(10, 0),
+        hora__lt=time(11, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_11h_qua = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=4, # Quarta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(10, 0),
+        hora__lt=time(11, 0)
     ).first()
 
     ag_11h_qui = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=5, # Quinta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(10, 0),
+        hora__lt=time(11, 0)
     ).first()
 
     ag_11h_sex = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=6, # Sexta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(10, 0),
+        hora__lt=time(11, 0)
     ).first()
 
     ag_11h_sab = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=7, # Sábado-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(10, 0),
+        hora__lt=time(11, 0)
     ).first()
 
-        #12pm - 13pm
+    #12pm - 13pm
     ag_12h_seg = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=2, # Segunda-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(11, 0),
+        hora__lt=time(12, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_12h_ter = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=3, # Terça-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(11, 0),
+        hora__lt=time(12, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_12h_qua = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=4, # Quarta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(11, 0),
+        hora__lt=time(12, 0)
     ).first()
 
     ag_12h_qui = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=5, # Quinta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(11, 0),
+        hora__lt=time(12, 0)
     ).first()
 
     ag_12h_sex = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=6, # Sexta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(11, 0),
+        hora__lt=time(12, 0)
     ).first()
 
     ag_12h_sab = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=7, # Sábado-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(11, 0),
+        hora__lt=time(12, 0)
     ).first()
 
-        #13pm - 14pm
+    #13pm - 14pm
     ag_13h_seg = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=2, # Segunda-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(12, 0),
+        hora__lt=time(13, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_13h_ter = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=3, # Terça-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(12, 0),
+        hora__lt=time(13, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_13h_qua = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=4, # Quarta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(12, 0),
+        hora__lt=time(13, 0)
     ).first()
 
     ag_13h_qui = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=5, # Quinta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(12, 0),
+        hora__lt=time(13, 0)
     ).first()
 
     ag_13h_sex = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=6, # Sexta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(12, 0),
+        hora__lt=time(13, 0)
     ).first()
 
     ag_13h_sab = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=7, # Sábado-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(12, 0),
+        hora__lt=time(13, 0)
     ).first()
 
-        #14pm - 15pm
+    #14pm - 15pm
     ag_14h_seg = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=2, # Segunda-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(13, 0),
+        hora__lt=time(14, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_14h_ter = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=3, # Terça-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(13, 0),
+        hora__lt=time(14, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_14h_qua = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=4, # Quarta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(13, 0),
+        hora__lt=time(14, 0)
     ).first()
 
     ag_14h_qui = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=5, # Quinta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(13, 0),
+        hora__lt=time(14, 0)
     ).first()
 
     ag_14h_sex = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=6, # Sexta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(13, 0),
+        hora__lt=time(14, 0)
     ).first()
 
     ag_14h_sab = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=7, # Sábado-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(13, 0),
+        hora__lt=time(14, 0)
     ).first()
 
-        #15pm - 16pm
+    #15pm - 16pm
     ag_15h_seg = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=2, # Segunda-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(14, 0),
+        hora__lt=time(15, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_15h_ter = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=3, # Terça-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(14, 0),
+        hora__lt=time(15, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_15h_qua = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=4, # Quarta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(14, 0),
+        hora__lt=time(15, 0)
     ).first()
 
     ag_15h_qui = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=5, # Quinta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(14, 0),
+        hora__lt=time(15, 0)
     ).first()
 
     ag_15h_sex = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=6, # Sexta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(14, 0),
+        hora__lt=time(15, 0)
     ).first()
 
     ag_15h_sab = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=7, # Sábado-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(14, 0),
+        hora__lt=time(15, 0)
     ).first()
 
-        #16pm - 17pm
+    #16pm - 17pm
     ag_16h_seg = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=2, # Segunda-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(15, 0),
+        hora__lt=time(16, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_16h_ter = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=3, # Terça-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(15, 0),
+        hora__lt=time(16, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_16h_qua = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=4, # Quarta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(15, 0),
+        hora__lt=time(16, 0)
     ).first()
 
     ag_16h_qui = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=5, # Quinta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(15, 0),
+        hora__lt=time(16, 0)
     ).first()
 
     ag_16h_sex = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=6, # Sexta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(15, 0),
+        hora__lt=time(16, 0)
     ).first()
 
     ag_16h_sab = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=7, # Sábado-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(15, 0),
+        hora__lt=time(16, 0)
     ).first()
     
-        #17pm - 18pm
+    #17pm - 18pm
     ag_17h_seg = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=2, # Segunda-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(16, 0),
+        hora__lt=time(17, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_17h_ter = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=3, # Terça-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(16, 0),
+        hora__lt=time(17, 0)
     ).first()  # Pega apenas o primeiro, se houver
 
     ag_17h_qua = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=4, # Quarta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(16, 0),
+        hora__lt=time(17, 0)
     ).first()
 
     ag_17h_qui = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=5, # Quinta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(16, 0),
+        hora__lt=time(17, 0)
     ).first()
 
     ag_17h_sex = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=6, # Sexta-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(16, 0),
+        hora__lt=time(17, 0)
     ).first()
 
     ag_17h_sab = agendamento_de_aula.objects.filter(
         data_agendamento__week_day=7, # Sábado-feira
-        hora__gte=time(8, 0),
-        hora__lt=time(9, 0)
+        hora__gte=time(16, 0),
+        hora__lt=time(17, 0)
     ).first()
 
     return render(request, 'tela_principal.html', {
