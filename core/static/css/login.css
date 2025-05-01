@@ -6,7 +6,7 @@
   }
 
   body {
-    background: linear-gradient(to right, #35359b, #242499);
+    background: linear-gradient(to right, #c13366, #c13366);
     height: 100vh;
     display: flex;
     align-items: center;
@@ -59,13 +59,8 @@
     font-weight: bold;
     border-radius: 4px;
   }
-
-  .btn-signup {
-    background-color: #2d4373;
-    color: white;
-  }
-
-  .btn-login {
+  
+ .btn-login {
     background-color: #eee;
     color: #333;
   }
