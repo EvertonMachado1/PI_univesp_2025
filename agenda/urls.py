@@ -16,9 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import tela_principal
+from core.views import tela_principal,matriculasubmit
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tela_principal/', tela_principal),
+    path('tela_principal/', tela_principal, name= 'tela_principal'),
+    path('submit_matricula/', matriculasubmit, name= 'matriculasubmit' )
 ]

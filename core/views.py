@@ -1,7 +1,7 @@
 from agenda import urls
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-from core.models import agendamento_de_aula
+from core.models import agendamento_de_aula,Matricula
 from datetime import time
 
 
@@ -75,3 +75,15 @@ def tela_principal(request):
         'agendamento_14h': agendamento_14h,'agendamento_15h': agendamento_15h,
         'agendamento_16h': agendamento_16h,'agendamento_17h': agendamento_17h,
     })
+
+def matriculasubmit(request) :
+    if request.POST:
+      nome_completo = request.POST.get('nome_completo')
+      idade  = request.POST.get('idade')
+      instrumento = request.POST.get('instrumento')
+      email = request.POST.get('email')
+      telefone= request.POST.get('telefone')
+      observacao =  request.POST.get('observacoes')
+      instrutor = request.user
+      Matricula.objects.create(nome_completo= nome_completo ,idade = idade ,instrumento = instrumento, email = email, telefone = telefone,observacao = observacao, instrutor = instrutor)
+    return redirect('tela_principal')

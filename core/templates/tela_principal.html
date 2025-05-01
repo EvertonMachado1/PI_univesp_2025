@@ -11,7 +11,7 @@
      <link rel="stylesheet" href="../static/css/popagd.css">
 </head>
 <body>
-    
+    <!--apresentação para o Usuário-->
     <div class="container">
         <div class="box">
             <p class="username">Bem vindo {{ request.user.username }}!</p>
@@ -20,7 +20,7 @@
             <button class="btn">Sair</button>
         </div>
         <h1>Sistema de Agendamento</h1>
-
+    <!--Tabela de meses abaixo-->
         <div class="mesano">
             <select class="slc" name="Mês">
                 <option value="01">Janeiro</option>
@@ -35,7 +35,7 @@
                 <option value="10">Outubro</option>
                 <option value="11">Novembro</option>
                 <option value="12">Dezembro</option>
-        
+            <!--tabela e anos abaixo-->
             </select>       
             <select class="slc" name="Ano">
                 <option value="25">2025</option>
@@ -323,13 +323,13 @@
        </div>
           
         
-    
+     <!--agendamento abaixo-->
     <div class="overlay_agd" id="overlay_agend">
         <button class="x" onclick="close_agend()">X</button>
         <div class="container_popagd">
 
         <div class="pop_agd">
-    
+    <!--Agendamento abaixo -->
     <h2>Agendamento de Aula</h2>
 <form id="formAgendamento">
 <label for="nome">Nome:</label>
@@ -350,15 +350,16 @@
 </div>
 </div>
     </div> 
-
+<!-- Matricula abaixo -->
 <div class="overlay_matri" id="pop_over">
     <div class="pop_mat">
         <button class="x" onclick="close_matri()">X</button>
-        <form action="#" method="post">
+        <form action= "/submit_matricula/" method="POST"> {% csrf_token %}
             <table>
                 <tr>
                     <th>Nome Completo</th>
-                    <td><input type="text" name="nome" required></td>
+                    <td><input type="text" name="nome_completo" required></td>
+                </tr>
                 </tr>
                 <tr>
                     <th>Idade</th>
