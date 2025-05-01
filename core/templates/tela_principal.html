@@ -441,14 +441,14 @@
 </div>
     </div> 
 
-<div class="overlay_matri" id="pop_over">
-    <div class="pop_mat">
-        <button class="x" onclick="close_matri()">X</button>
-        <form action="#" method="post">
+    <div class="overlay_matri" id="pop_over">
+        <div class="pop_mat">
+            <button class="x" onclick="close_matri()">X</button>
+            <form action= "/submit_matricula/" method="POST"> {% csrf_token %}
             <table>
                 <tr>
                     <th>Nome Completo</th>
-                    <td><input type="text" name="nome" required></td>
+                    <td><input type="text" name="nome_completo" required></td>
                 </tr>
                 <tr>
                     <th>Idade</th>
