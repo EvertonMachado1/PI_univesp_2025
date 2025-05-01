@@ -20,7 +20,7 @@ class Matricula(models.Model):
     
 class agendamento_de_aula(models.Model):
     nome = models.CharField(max_length=100)
-    telefone = models.CharField()
+    telefone = models.CharField(max_length=20)
     data_agendamento = models.DateField(verbose_name= 'Data do agendamento')
     hora = models.TimeField()
     instrutor =models.ForeignKey(User, on_delete=models.CASCADE)
