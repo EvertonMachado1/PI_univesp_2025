@@ -75,11 +75,31 @@
                     {% else %}
                         -
                     {% endif %}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{% if ag_8h_ter %}
+                        {{ aag_8h_ter.nome }}
+                    {% else %}
+                        -
+                    {% endif %}</td>
+                    <td>{% if ag_8h_qua %}
+                        {{ aag_8h_qua.nome }}
+                    {% else %}
+                        -
+                    {% endif %}</td>
+                    <td>{% if ag_8h_qui %}
+                        {{ aag_8h_qui.nome }}
+                    {% else %}
+                        -
+                    {% endif %}</td>
+                    <td>{% if ag_8h_sex %}
+                        {{ aag_8h_sex.nome }}
+                    {% else %}
+                        -
+                    {% endif %}</td>
+                    <td>{% if ag_8h_sab %}
+                        {{ aag_8h_sab.nome }}
+                    {% else %}
+                        -
+                    {% endif %}</td>
                 </tr>
                 <tr data-info="0900">
                     <td>09:00 - 10:00</td>
