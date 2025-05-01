@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import tela_inicial
+from core.views import tela_principal
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tela_inicial/', tela_inicial),
+    path('tela_principal/', tela_principal),
 ]
