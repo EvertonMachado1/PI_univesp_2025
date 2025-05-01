@@ -8,3 +8,5 @@ from core.models import agendamento_de_aula
 @login_required
 def tela_principal(request):
     return render(request, 'tela_principal.html', {'agendamentos': agendamento_de_aula})
+
+#aaaaa
