@@ -14,12 +14,23 @@
     
     <div class="container">
         <div class="box">
+            <p class="username">Bem vindo {{ request.user.username }}!</p>
             <button class="btn" id="agendamento" onclick="pop_agend()">Agendamento</button>
             <Button class="btn" id="matricular" onclick="pop_matri()">Matricular</Button>
             <button class="btn">Sair</button>
         </div>
         <h1>Sistema de Agendamento</h1>
-        
+
+        <ul>
+            {% for agendamento in agendamentos %}
+              <li>
+                Data: {{ agendamento.data }} - Horário: {{ agendamento.horario }} - Instrumento: {{ agendamento.instrumento }}
+              </li>
+            {% empty %}
+              <li>Você não tem nenhum agendamento.</li>
+            {% endfor %}
+          </ul>
+          
         <div class="mesano">
             <select class="slc" name="Mês">
                 <option value="01">Janeiro</option>
