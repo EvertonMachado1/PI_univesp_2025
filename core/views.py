@@ -3,6 +3,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from core.models import agendamento_de_aula,Matricula
 from datetime import time
+from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
 
 
 #render tela inicial
@@ -433,4 +435,14 @@ def matriculasubmit(request) :
     return redirect('tela_principal')
 
 def tela_login(request):
+   if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('painel')
+        else:
+            messages.error(request, 'Usuário ou senha incorretos!')
    return render(request, 'tela_login.html')
