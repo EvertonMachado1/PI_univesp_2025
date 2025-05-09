@@ -442,7 +442,7 @@ def tela_login(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('painel')
+            return redirect('tela_principal')
         else:
             messages.error(request, 'Usuário ou senha incorretos!')
    return render(request, 'tela_login.html')
