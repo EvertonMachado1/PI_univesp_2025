@@ -446,3 +446,7 @@ def tela_login(request):
         else:
             messages.error(request, 'Usuário ou senha incorretos!')
    return render(request, 'tela_login.html')
+
+def sair(request):
+    logout(request)
+    return redirect('tela_login')
