@@ -431,3 +431,6 @@ def matriculasubmit(request) :
       instrutor = request.user
       Matricula.objects.create(nome_completo= nome_completo ,idade = idade ,instrumento = instrumento, email = email, telefone = telefone,observacao = observacao, instrutor = instrutor)
     return redirect('tela_principal')
+
+def tela_login(request):
+   return render(request, 'tela_login.html')
