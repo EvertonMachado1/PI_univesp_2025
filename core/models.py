@@ -19,7 +19,7 @@ class Matricula(models.Model):
         return self.nome_completo
     
 class agendamento_de_aula(models.Model):
-    nome = models.CharField(max_length=100)
+    aluno = models.ForeignKey(Matricula, on_delete=models.CASCADE, null=True, blank=True)
     telefone = models.CharField(max_length=20)
     data_agendamento = models.DateField(verbose_name= 'Data do agendamento')
     hora = models.TimeField()
@@ -28,11 +28,11 @@ class agendamento_de_aula(models.Model):
         db_table = 'agendamento_de_aula'
 
     def __str__(self):
-        return self.nome
+        return f'{self.aluno.nome_completo} - {self.data_agendamento} às {self.hora}'
     
 
 class deletarAgendamento(models.Model):
-    nome = models.CharField(max_length=100)
+    aluno = models.ForeignKey(Matricula, on_delete=models.CASCADE, null=True, blank=True)
     telefone = models.CharField()
     data_agendamento = models.DateField(verbose_name= 'Data do agendamento')
     hora = models.TimeField()
@@ -41,7 +41,7 @@ class deletarAgendamento(models.Model):
         db_table = 'deletarAgendamento'
 
     def __str__(self):
-        return self.nome
+        return f'{self.aluno.nome_completo} - {self.data_agendamento} às {self.hora}'
     
     
 
