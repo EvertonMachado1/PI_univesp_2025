@@ -9,28 +9,30 @@ from django.contrib import messages
 
 #render tela inicial
 @login_required
-def tela_principal(request):
-    dias_da_semana = [2, 3, 4, 5, 6, 7]  # Seg a Sáb
-    horarios = range(8, 18)  # Das 08h às 17h
+def tela_principal(request):  # função que renderiza a tela
+    dias_da_semana = [2, 3, 4, 5, 6, 7]  # lista de dias de seg a sab
+    horarios = range(8, 18)  # cria um intervalo de horas (das 8 as 17h)
 
-    agendamentos = {} # Dicionario vazio pra guardar os agendamentos organizados por horario
+    agendamentos = {}  # cria dicionário que vai armazenar os agendamentos
 
-    for hora in horarios:
-        hora_inicio = time(hora, 0)
-        hora_fim = time(hora + 1, 0)
-        linha = []
+    for hora in horarios:  # loop pra cada hora
+        hora_inicio = time(hora, 0)  # define o começo da aula (ex: 8h00)
+        hora_fim = time(hora + 1, 0)  # define o fim da aula (ex: 9h00)
+        linha = []  # lista que vai armazenar os agendamentos daquela hora
 
-        for dia in dias_da_semana:
-            agendamento = agendamento_de_aula.objects.filter(
-                data_agendamento__week_day=dia,
-                hora__gte=hora_inicio,
-                hora__lt=hora_fim
-            ).first()
-            linha.append(agendamento)
+        for dia in dias_da_semana:  # loop para cada dia
+            agendamento = agendamento_de_aula.objects.filter(  # busca agendamentos na hora e dia especificado
+                data_agendamento__week_day=dia,  # filtra pelo dia da semana
+                hora__gte=hora_inicio,  # verifica se o horário da aula é maior ou igual ao 'hora_inicio'
+                hora__lt=hora_fim  # verifica se o horário da aula é menor que o 'hora_fim'
+            ).first()  # pega o primeiro agendamento que corresponde aos critérios
 
-        agendamentos[f"{hora:02d}:00"] = linha
+            linha.append(agendamento)  # adiciona o agendamento encontrado à linha
 
-    return render(request, 'tela_principal.html', {'agendamentos': agendamentos})
+        agendamentos[f"{hora:02d}:00"] = linha  # adiciona a linha (agendamentos daquela hora) no dicionário
+
+    return render(request, 'tela_principal.html', {'agendamentos': agendamentos})  # renderiza a pagina passando os agendamentos encontrados
+
 
 def matriculasubmit(request) :
     if request.POST:
