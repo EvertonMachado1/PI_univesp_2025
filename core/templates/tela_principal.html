@@ -4,24 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SisAgMusic</title>
-     <link rel="stylesheet" href="../static/css/tela_principal.css">
-     <link rel="stylesheet" href="../static/css/tabelaagd.css">
-     <link rel="stylesheet" href="../static/css/matricula.css">
-     <link rel="stylesheet" href="../static/css/overlay.css">
-     <link rel="stylesheet" href="../static/css/popagd.css">
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/tela_principal.css' %}">
+<link rel="stylesheet" href="{% static 'css/tabelaagd.css' %}">
+<link rel="stylesheet" href="{% static 'css/matricula.css' %}">
+<link rel="stylesheet" href="{% static 'css/overlay.css' %}">
+<link rel="stylesheet" href="{% static 'css/popagd.css' %}">
+
+
+
 </head>
 <body>
     
     <div class="container">
-        <div class="box">
-            <p class="username">Bem vindo {{ request.user.username }}!</p>
-            <button class="btn" id="agendamento" onclick="pop_agend()">Agendamento</button>
-            <Button class="btn" id="matricular" onclick="pop_matri()">Matricular</Button>
-            <form action="{% url 'logout' %}" method="post">
-                {% csrf_token %}
-                <button type="submit">Logout</button>
-            </form>
-        </div>
+       <div class="box">
+    <p class="username">Bem vindo {{ request.user.username }}!</p>
+    <button class="btn" id="agendamento" onclick="pop_agend()">Agendamento</button>
+    <button class="btn" id="matricular" onclick="pop_matri()">Matricular</button>
+
+    <form method="post" action="{% url 'logout' %}" class="logout-form">
+    {% csrf_token %}
+    <button type="submit" class="btn">Logout</button>
+</form>
+
+</div>
+
+
         <h1>Sistema de Agendamento</h1>
 
         <div class="mesano">
@@ -167,9 +175,10 @@
     </div>
 </div>
 
-<footer>
+<footer class="footer">
     <p>Projeto UNIVESP - Grupo 010 Turma 001 - 2025</p>
 </footer>
+
     <script>
         function pop_matri(){
             document.getElementById("pop_over").style.display = "block";
