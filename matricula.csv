@@ -1,6 +1,0 @@
-id,nome_completo,idade,instrumento,email,telefone,observacao,instrutor_id
-1,"Aluno Teste",21,"Violão",aluno@teste.com,999999999,"aluno teste",1
-2,jose,20,"violão",eliasisacsousa@gmail.com,9999999999,ok,1
-3,Elias,24,"violão",eliasisacsousa@gmail.com,9999999999,ok,1
-4,"geraldo luiz",32,"violão",bm@hotmail.com,16999999219,ok,1
-5,amanda,25,"violão",eliasisacsousa@gmail.com,9999999999,ok,1

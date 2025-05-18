@@ -1,9 +1,0 @@
-name,seq
-django_migrations,22
-django_admin_log,11
-django_content_type,9
-auth_permission,36
-auth_group,0
-auth_user,2
-agendamento_de_aula,2
-matricula,5
