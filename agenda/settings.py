@@ -76,16 +76,17 @@ WSGI_APPLICATION = 'agenda.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pi_univesp_2025',
-        'USER': 'root',
-        'PASSWORD': '3636',
-        'HOST': 'localhost',  # Ou o endereço do seu servidor MySQL
-        'PORT': '3306',      # Porta padrão do MySQL
+        'NAME': 'pi',
+        'USER': 'pi',
+        'PASSWORD': '12345678',
+        'HOST': 'localhost',
+        'PORT': '3306',
         'OPTIONS': {
-            'charset': 'utf8mb4',
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

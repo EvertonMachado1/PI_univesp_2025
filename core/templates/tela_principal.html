@@ -13,19 +13,23 @@
 <body>
     
     <div class="container">
-        <div class="box">
-            <p class="username">Bem vindo {{ request.user.username }}!</p>
-            <button class="btn" id="agendamento" onclick="pop_agend()">Agendamento</button>
-            <Button class="btn" id="matricular" onclick="pop_matri()">Matricular</Button>
-            <form action="{% url 'logout' %}" method="post">
-                {% csrf_token %}
-                <button type="submit">Logout</button>
-            </form>
-        </div>
+       <div class="box">
+    <p class="username">Bem vindo {{ request.user.username }}!</p>
+    <button class="btn" id="agendamento" onclick="pop_agend()">Agendamento</button>
+    <button class="btn" id="matricular" onclick="pop_matri()">Matricular</button>
+
+    <form method="post" action="{% url 'logout' %}" class="logout-form">
+    {% csrf_token %}
+    <button type="submit" class="btn">Logout</button>
+</form>
+
+</div>
+
+
         <h1>Sistema de Agendamento</h1>
 
         <div class="mesano">
-            <<form method="GET">
+            <form method="GET">
                 <div class="mesano">
                     <select class="slc" name="mes" onchange="this.form.submit()">
                         <option value="01" {% if mes_selecionado == '01' %}selected{% endif %}>Janeiro</option>

@@ -17,7 +17,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core.views import tela_principal,matriculasubmit,tela_login,sair
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tela_principal/', tela_principal, name= 'tela_principal'),
