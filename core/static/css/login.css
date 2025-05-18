@@ -14,25 +14,13 @@
   }
 
   .container {
-  width: 700px;
-  height: 450px;
-  display: flex;
-  border-radius: 12px;
-  overflow: hidden;
-  background: linear-gradient(to bottom, #f0f0f0, #c9c9c9); /* contraste maior */
-  box-shadow:
-    inset 0 2px 4px rgba(255, 255, 255, 0.7),
-    0 20px 40px rgba(0, 0, 0, 0.4); /* sombra mais forte */
-  transform: perspective(800px);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  
-}
-
-.container:hover {
-  box-shadow:
-    inset 0 2px 4px rgba(255, 255, 255, 0.8),
-    0 30px 60px rgba(0, 0, 0, 0.45); /* aumenta sombra ao passar o mouse */
-}
+    width: 700px;
+    height: 450px;
+    display: flex;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
 
   .left-panel {
     width: 50%;
@@ -55,10 +43,6 @@
     background: #fff;
     padding: 40px;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
   }
 
   .right-panel .buttons {
@@ -81,13 +65,10 @@
     color: #333;
   }
 
- form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 300px; /* ou outro valor desejado */
-}
-
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 
   form label {
     font-size: 12px;
