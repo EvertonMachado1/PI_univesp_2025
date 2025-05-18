@@ -1,0 +1,3 @@
+id,password,last_login,is_superuser,username,last_name,email,is_staff,is_active,date_joined,first_name
+1,pbkdf2_sha256$1000000$8vlZMGprf2ywUg6ysifzUH$k3f76SQeIyaNDGmUJ9egQhi6n5BK4jMJLjur4gK8wuk=,"2025-05-15 03:18:18.632341",1,admin,"","",1,1,"2025-05-01 16:35:48.879344",""
+2,pbkdf2_sha256$1000000$gEslbMcmrpfRZoMPbPXAVv$3DsI92Wx2YJCVaRp4jxk31xQ/g+jRhMJCn2C3Wx+Ar4=,,0,professor,Teste,professor@teste.com,1,1,"2025-05-01 16:38:46",Professor
