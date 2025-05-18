@@ -30,19 +30,6 @@ class agendamento_de_aula(models.Model):
     def __str__(self):
         return f'{self.aluno.nome_completo} - {self.data_agendamento} às {self.hora}'
     
-
-class deletarAgendamento(models.Model):
-    aluno = models.ForeignKey(Matricula, on_delete=models.CASCADE, null=True, blank=True)
-    telefone = models.CharField()
-    data_agendamento = models.DateField(verbose_name= 'Data do agendamento')
-    hora = models.TimeField()
-    instrutor =models.ForeignKey(User, on_delete=models.CASCADE)
-    class Meta:
-        db_table = 'deletarAgendamento'
-
-    def __str__(self):
-        return f'{self.aluno.nome_completo} - {self.data_agendamento} às {self.hora}'
-    
     
 
 
